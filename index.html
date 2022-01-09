@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<script type="text/javascript">
+  async function blink(blink_start, blink_end) {
+    for (let i = 0; i <= 1000; i++) {
+      console.log(i);
+      document.getElementById("imgClickAndChange").src = blink_start;
+      await new Promise(r => setTimeout(r, 50));
+      document.getElementById("imgClickAndChange").src = blink_end;
+      await new Promise(r => setTimeout(r, 1000));
+    }
+  }
+</script>
+
+<div>
+  <img src="eyes_open.jpg" width=700px id="imgClickAndChange" onclick='blink("eyes_closed.jpg", "eyes_open.jpg");'/>
+</div>
